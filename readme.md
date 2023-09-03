@@ -1,32 +1,44 @@
 ### Working page:  
-https://ads-creator.herokuapp.com/
+https://reading-dev-story-5700b910bf89.herokuapp.com/
+
+### For Reading developers
 
 ### Endpoints:  
-POST: /create-ad   
-GET:  /ads/:id/   
-GET:  /ads   
+POST: /create-story   
+GET:  /stories/:id/   
+GET:  /stories/   
 
 
-### for create ad:   
-               in body {
-                    "title": "car",   
-                    "description": "it is great car",   
-                    "price": 5900,   
-                    "links": ["https://www.images-holder/2123.jpg", "https://www.images-holder/23.jpg",    "https://www.images-holder/123.jpg"]   
-                } 
+### for create story:   
+               in body{
+                    "title": "Mars",
+                    "description": " MARSSSSSSSSS... When the EHT is looking at polarization in astronomical sources, we're really looking for information about the structure of magnetic fields, said Broderick, who is also a professor at the University of Waterloo. Broderick said he helped devise the techniques that allowed the team to capture the polarized light. The image researchers captured is not of the black hole closest to Earth, however, but of one at the centre of neighbouring galaxy Messier 87 that was easier to observe by telescope. It is about six billion times the mass of our sun and located about 53 million light years from Earth. One light year is equal to 9.5 trillion kilometres.",
+                    "storyType": "any",
+                    "images": 
+                    [
+                        {
+                            "location": [1, 2],
+                            "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWCSoAcwVcztL6bDnd9BCVb6xaov4RFH7aDw&usqp=CAU"
+                        },
+                        {
+                            "location": [3],
+                            "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSZfK23dXFGP6D2taQ22Lud5TNuvDQZurT5Q&usqp=CAU"
+                        },
+                        {
+                            "location": [4],
+                            "src": "https://www.gettyimages.pt/gi-resources/images/Homepage/Hero/PT/PT_hero_42_153645159.jpg"
+                        },
+                        {
+                            "location": [3],
+                            "src": "https://cdn.xxl.thumbs.canstockphoto.com/white-waterlily-in-nature-pond-flowers-image-stock-image_csp10306162.jpg"
+                        }                                                
+                    ]
+}
 
-### for recive ad:   
-                optional param: fields                   
-                valid value for param fields: 'description', 'links'   
-                example: GET  /ads/3432323232344?fields=description,links   
-                or: GET  /ads/3432323232344?fields=links   
+### for recive story:    
+                example: GET  /stories/64f4a35b16032635f88151cb   
+ 
 
-### for recive ads:   
-                optional params: param sort_by_price, sort_by_date, title, page   
-                                    
-                valid value for param sort_by_price and sort_by_date: 1, -1      
-                example: GET  /ads?title=car&sort_by_price=-1    
-                or: GET  /ads   
-                param title a snippet of text that will be searched in the ad title  
-                page: number of page    
+### for recive stories:   
+                example: GET  /stories/   
                                       
