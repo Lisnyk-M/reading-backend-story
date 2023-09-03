@@ -56,7 +56,7 @@ class StoryController {
             const story = await storyModel.findById(ObjectId(req.params.id));
 
             if (!story) {
-                return res.status(404).send({ message: 'story not found.' });
+                return res.status(404).send({ message: 'story not found. :)' });
             }
 
             const { title, description, storyType, images } = story;
