@@ -1,0 +1,15 @@
+app = "dev.server"
+
+[build]
+  builder = "heroku/buildpacks:nodejs"
+  environment = {
+        PORT = 443
+        HOST = 127.0.0.1
+        MONGODB_URL = "mongodb+srv://dog:cot@cluster0.kf6wm.mongodb.net/db-contacts?retryWrites=true&w=majority"
+        SITE_DOMAIN = "https://ads-creator.herokuapp.com/"
+        SITE_DOMAIN_LOCAL= "http://localhost:443"
+    }
+
+[services]
+    [services.http]
+        handler = "npm start"
