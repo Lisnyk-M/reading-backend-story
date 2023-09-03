@@ -25,51 +25,63 @@
 </head>
 
 <body>
-    <h2>REST API для роботи з коллекцією оголошень</h2>
+    <h2>REST API для розробників читалки</h2>
     <ul class="instructions">
         <li>
-            <p>Для додавання нового оголошення необхідно відправити POST - запрос на ендпоінт: /create-ad</p>
+            <p>Для додавання нової історії необхідно відправити POST - запрос на ендпоінт: /create-story</p>
             <pre class="text">
-                в body {
-                    "title": "car",
-                    "description": "it is great car",
-                    "price": 5900,
-                    "links": ["https://www.images-holder/2123.jpg", "https://www.images-holder/23.jpg", "https://www.images-holder/123.jpg"]
+                в body 
+                {
+                    "title": "Mars",
+                    "description": " MARSSSSSSSSS... When the EHT is looking at polarization in astronomical sources, we're really looking
+                         for information about the structure of magnetic fields, said Broderick, who is also a professor at the University 
+                         of Waterloo. Broderick said he helped devise the techniques that allowed the team to capture the polarized light. 
+                         The image researchers captured is not of the black hole closest to Earth, however, but of one at the centre of 
+                         neighbouring galaxy Messier 87 that was easier to observe by telescope. It is about six billion times the mass of 
+                         our sun and located about 53 million light years from Earth. One light year is equal to 9.5 trillion kilometres.",
+                    "storyType": "any",
+                    "images": 
+                    [
+                        {
+                            "location": [1, 2],
+                            "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWCSoAcwVcztL6bDnd9BCVb6xaov4RFH7aDw&usqp=CAU"
+                        },
+                        {
+                            "location": [3],
+                            "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSZfK23dXFGP6D2taQ22Lud5TNuvDQZurT5Q&usqp=CAU"
+                        },
+                        {
+                            "location": [4],
+                            "src": "https://www.gettyimages.pt/gi-resources/images/Homepage/Hero/PT/PT_hero_42_153645159.jpg"
+                        },
+                        {
+                            "location": [3],
+                            "src": "https://cdn.xxl.thumbs.canstockphoto.com/white-waterlily-in-nature-pond-flowers-image-stock-image_csp10306162.jpg"
+                        }                                                
+                    ]
                 } 
+                приклад: Post  /create-story
              </pre>
-            <p>У відповіді на запит прийде ID створеного оголошення </p>
+            <p>У відповіді на запит прийде ID створеної історії </p>
         </li>
         <li>
-            <p>Для отримання оголошення необхідно відправити GET - запрос на ендпоінт: /ads/:id/</p>
+            <p>Для отримання іторії необхідно відправити GET - запрос на ендпоінт: /stories/:id/</p>
             <pre class="text">
-                Назву опціональних полів необхідно передати у параметр fields 
-                припустимі значення: 'description', 'links'
-                приклад: GET  /ads/3432323232344?fields=description,links
-                або: GET  /ads/3432323232344?fields=links
+                приклад: GET  stories/:id/
              </pre>           
         </li>
         <li>
-            <p>Для отримання списку оголошеннь необхідно відправити GET - запрос на ендпоінт: /ads</p>
+            <p>Для отримання списку історій необхідно відправити GET - запрос на ендпоінт: /stories</p>
             <pre class="text">
-                Опціональні поля:
-                    sort_by_price, sort_by_date
-                    припустимі значення: 1, -1
-
-                    title
-                    припустимі значення: фрагмент тексту по якому буде проводитись пошук у назві оголошення
-
-                    page 
-                    припустимі значення: номер сторінки
-
-                приклад: GET  /ads?title=car&sort_by_price=-1
+                приклад: GET  /stories/:id/
              </pre>           
         </li>
     </ul>
     <h2>Список ендпоінтів:</h2>
     <ul class="list">
-        <li>POST /create-ad</li>
-        <li>GET: /ads/:id/</li>   
-        <li>GET: /ads</li>
+        <li>POST /create-story</li>
+        <li>GET: /stories/:id/</li>   
+        <li>GET: /stories</li>
     </ul>
 </body>
 
