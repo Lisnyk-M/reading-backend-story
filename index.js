@@ -3,7 +3,7 @@ const app = express();
 const { json } = require('express');
 const morgan = require('morgan');
 const ContactsService_v2 = require('./src/services/contact.service_v2');
-const adsRouter = require('./src/ads/ads.router');
+const storyRouter = require('./src/storys/story.router');
 
 
 require('dotenv').config();
@@ -28,7 +28,7 @@ function logErrors(err, req, res, next) {
 
 app.use(json());
 app.use(morgan('combined'));
-app.use('/', adsRouter);
+app.use('/', storyRouter);
 app.use( express.static('public'));
 
 app.use('/upload', (req, res, next) => {
